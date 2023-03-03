@@ -33,7 +33,7 @@ public class Contact {
     private  String phone_number;
     @NonNull
     private Gender gender;
-//    @NonNull
+    @NonNull
     private String profilePicture_url;
     @NonNull
     private String password;

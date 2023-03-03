@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 @RestController
@@ -21,7 +22,7 @@ public class ContactController {
     private ContactService contactService;
 
     @PostMapping("/createContact")
-    public ResponseEntity<?> createContact(@RequestBody CreateContactRequest createContactRequest) throws ContactException{
+    public ResponseEntity<?> createContact(@RequestBody CreateContactRequest createContactRequest) throws ContactException, IOException {
         CreateContactResponse createContactResponse = contactService.createContact(createContactRequest);
         return new ResponseEntity<>(createContactResponse, HttpStatus.CREATED);
     }
